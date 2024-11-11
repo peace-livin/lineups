@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lineup &mdash; Organize your life</title>
+  </head>
+  <body data-theme ="coffee">
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">LineUPS</a>
+      </div>
+      <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-5 w-5 stroke-current"> -->
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <main class="flex items-center justify-center min-h-screen my-5">
+      <div class="card bg-base-100 w-80 sm:w-1/3 shadow-xl">
+      <figure>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb3q6DrnMCzMyzu83I2JFuzhdkqQ9P0E3Hhg&s"
+          class="h-full w-full object-cover"
+          alt="pattern" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">LineUPS &mdash; Organize your Task</h2>
+        <input type="text" placeholder="Add a Task" class="input input-borderd w-full max max-w-25" />
+        <div class="form-control px-2 grid gap-1">
+          <label class="label cursor-pointer bg-zinc-300 rounded">
+            <span class="label-text">Complete Task</span>
+            <input type="checkbox" checked />
+          </label>
+          
+          <label class="label cursor-pointer">
+            <span class="label-text">Remember me</span>
+            <input type="checkbox" />
+          </label>
+        </div>
+        
+      </div>
+    </div></main>
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright free &mdash; 2024</p>
+      </aside>
+    </footer>
+    <!-- Custom Scripts -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
