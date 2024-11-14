@@ -1,7 +1,20 @@
 import "./index.css";
-import {inputEl,yearEL,formEl} from "./domSelection.js";
+import {inputEl,yearEL,formEl,taskListEl} from "./domSelection.js";
+import Task from "./components/task.js";
 
 const tasks = [];
+
+function renderTasks(){
+    taskListEl.innerHTML="";
+    
+        const fragment = document.createDocumentFragment();
+        tasks.forEach((task)=>{
+            const taskEl = Task(task.value,task.isCompleted);
+            fragment.appendChild(taskEl);
+        });
+        taskListEl.appendChild(fragment);
+    };
+
 
 formEl.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -9,11 +22,16 @@ formEl.addEventListener("submit",(e)=>{
         return;
     }
  
-    tasks.push({title: inputEl.value,
-        isCompleted:false,
+    tasks.unshift({
         id:crypto.randomUUID(),
+        value: inputEl.value,
+        isCompleted:false,
+        
     });
     console.log(tasks);
+
+    // render the tasks 
+    renderTasks();
     // empty the input filed
     inputEl.value="";
     
@@ -31,6 +49,4 @@ formEl.addEventListener("submit",(e)=>{
     yearEL.textContent=`${year}`;
 })();
 
-inputEl.addEventListener("keyup",(e)=>{
-    console.log("hello");
-});
+
