@@ -9,7 +9,7 @@ function renderTasks(){
     
         const fragment = document.createDocumentFragment();
         tasks.forEach((task)=>{
-            const taskEl = Task(task.value,task.isCompleted);
+            const taskEl = Task(task.value,task.isCompleted,task.id);
             fragment.appendChild(taskEl);
         });
         taskListEl.appendChild(fragment);
@@ -25,7 +25,7 @@ formEl.addEventListener("submit",(e)=>{
     tasks.unshift({
         id:crypto.randomUUID(),
         value: inputEl.value,
-        isCompleted:false,
+        isCompleted:true,
         
     });
     console.log(tasks);
@@ -40,6 +40,12 @@ formEl.addEventListener("submit",(e)=>{
 
 });
 
+taskListEl.addEventListener("click", (e) => {
+    if (e.target.targetName === "INPUT"){
+        console.log(e.target.closest("label").id);
+        console.log("hey");
+    }
+});
 
 // iife function
 
