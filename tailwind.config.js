@@ -5,7 +5,7 @@ export default {
     extend: {},
     fontFamily:{
       sans:["HK Grotesk","sans-serif"]
-    }
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

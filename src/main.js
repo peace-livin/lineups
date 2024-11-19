@@ -34,11 +34,10 @@ formEl.addEventListener("submit",(e)=>{
     renderTasks();
     // empty the input filed
     inputEl.value="";
-    
-
-
 
 });
+
+// task list
 
 taskListEl.addEventListener("click", (e) => {
     if (e.target.targetName === "INPUT"){
