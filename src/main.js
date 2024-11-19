@@ -2,7 +2,23 @@ import "./index.css";
 import {inputEl,yearEL,formEl,taskListEl} from "./domSelection.js";
 import Task from "./components/task.js";
 
-const tasks = [];
+let tasks = [];
+
+//The toggle the isCompleted property of the task
+//will be called when the user clicks on the task
+
+function toggleTask(id){
+    tasks=tasks.map((task)=>{
+        if (task.id === id){
+            return {
+                ...task,
+                isCompleted:!task.isCompleted };
+            }
+            return task;
+    });
+    tasks.sort((a,b)=>a.isCompleted-b.isCompleted);
+
+}
 
 function renderTasks(){
     taskListEl.innerHTML="";
@@ -22,6 +38,7 @@ formEl.addEventListener("submit",(e)=>{
         return;
     }
  
+    // add task to the list
     tasks.unshift({
         id:crypto.randomUUID(),
         value: inputEl.value,
@@ -42,8 +59,10 @@ formEl.addEventListener("submit",(e)=>{
 taskListEl.addEventListener("click", (e) => {
     if (e.target.targetName === "INPUT"){
         console.log(e.target.closest("label").id);
-        console.log("hey");
+        toggleTask(e.target.closest("label").id);
+        renderTasks();
     }
+
 });
 
 // iife function
