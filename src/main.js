@@ -1,8 +1,19 @@
 import "./index.css";
 import {inputEl,yearEL,formEl,taskListEl} from "./domSelection.js";
 import Task from "./components/task.js";
+import { data } from "autoprefixer";
 
 let tasks = [];
+
+// localforage.setDriver(localforage.LOCALSTORAGE);
+
+
+// iife function
+
+(async()=>{await localforage.getItem("device");
+console.log(data);
+})();
+
 
 //The toggle the isCompleted property of the task
 //will be called when the user clicks on the task
